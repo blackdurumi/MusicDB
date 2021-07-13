@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for data in music %}
+{#    {{ data }}#}
+    <h1>{{ data[4] }} - {{ data[1] }}{% if feat != [] %}(feat. {{ feat[0][0] }}) {% endif %}</h1>
+    <h2>[ {{ data[2] }}, {{ data[6] }} ]</h2>
+    <h3>Genre : {{ data[0] }}</h3>
+    <h4>Plays : {{ data[5] }}</h4>
+    <form action="/playing">
+        <input type="submit" value="재생">
+    </form>
+    <form action="/delete">
+        <input type="submit" value="삭제">
+    </form>
+    <form action="/">
+        <input type="submit" value="메인화면으로">
+    </form>
+
+{% endfor %}
+
+</body>
+</html>
